@@ -5,7 +5,7 @@ require("core/lsp")
 require("core/cmp")
 
 -- Vim options
-vim.opt.background = "dark"
+-- vim.opt.background = "dark"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = {"noinsert", "menuone", "noselect"}
 vim.opt.cursorline = true

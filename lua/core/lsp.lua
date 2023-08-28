@@ -7,6 +7,8 @@ lspconfig.golangci_lint_ls.setup{}
 lspconfig.bashls.setup{}
 lspconfig.jsonls.setup{}
 lspconfig.html.setup{}
+lspconfig.svelte.setup{}
+lspconfig.prismals.setup{}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
