@@ -23,3 +23,11 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.g.mkdp_port = "7890"
+
+-- Enable formatting on save
+vim.cmd([[autocmd BufWritePre *.js Prettier]])
+
+-- Set Prettier as the default formatter
+vim.g['prettier#autoformat_config_present'] = 1
+vim.g['prettier#autoformat_require_pragma'] = 0
+vim.g['prettier#autoformat_config_file'] = ''
