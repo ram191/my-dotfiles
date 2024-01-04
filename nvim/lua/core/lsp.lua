@@ -15,7 +15,8 @@ lspconfig.rust_analyzer.setup {
     ['rust-analyzer'] = {},
   },
 }
-require'lspconfig'.bashls.setup{}
+lspconfig.bashls.setup{}
+lspconfig.pyright.setup{}
 
 
 -- Global mappings.
