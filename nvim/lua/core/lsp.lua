@@ -17,6 +17,10 @@ lspconfig.rust_analyzer.setup {
 }
 lspconfig.bashls.setup{}
 lspconfig.pyright.setup{}
+-- lspconfig.phpactor.setup{}
+lspconfig.intelephense.setup{
+  filetypes = { "php", "blade" },
+}
 
 
 -- Global mappings.

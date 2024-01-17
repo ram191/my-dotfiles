@@ -8,7 +8,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'vim-airline/vim-airline'
   use 'mkitt/tabline.vim'
-  use 'tpope/vim-fugitive'
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
@@ -26,5 +25,9 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'ribru17/bamboo.nvim'
   use 'prettier/vim-prettier'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 end)
 
