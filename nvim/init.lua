@@ -3,6 +3,7 @@ require("core/keymapping")
 require("core/theme")
 require("core/lsp")
 require("core/cmp")
+require("core/treesitter")
 
 -- Vim options
 -- vim.opt.background = "dark"
@@ -33,41 +34,3 @@ vim.g['prettier#autoformat'] = 1
 vim.g['php_cs_fixer_fix_on_save'] = 1
 vim.g.copilot_assume_mapped = true
 -- -- Configure vim-prettier for PHP files
-
-
--- Filetypes --
-vim.filetype.add({
-  pattern = {
-    ['.*%.blade%.php'] = 'blade',
-  },
-})
-
----- Blade syntax highlighting with TS
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.blade = {
-  install_info = {
-    url = "https://github.com/EmranMR/tree-sitter-blade",
-    files = {"src/parser.c"},
-    branch = "main",
-  },
-  filetype = "blade"
-}
-
--- Enable Treesitter for Blade templates
-   -- require'nvim-treesitter.configs'.setup {
-   --   ensure_installed = 'php',
-   --   highlight = {
-   --     enable = true,
-   --     additional_vim_regex_highlighting = false,
-   --   },
-   --   indent = {
-   --     enable = true
-   --   }
-   -- }
-
--- Set the *.blade.php file to be filetype of blade
--- vim.cmd([[
--- augroup BladeFiltypeRelated
---   au BufNewFile,BufRead *.blade.php set ft=blade
--- augroup END
--- ]])

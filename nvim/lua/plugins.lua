@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'preservim/nerdtree'
-  use 'navarasu/onedark.nvim' use 'rust-lang/rust.vim'
+  use 'rust-lang/rust.vim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
@@ -29,5 +29,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'wakatime/vim-wakatime'
+  use 'tpope/vim-fugitive'
 end)
 
