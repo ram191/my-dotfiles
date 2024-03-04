@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   use 'junegunn/fzf.vim'
   use {'fatih/vim-go', cmd = {'GoUpdateBinaries'}}
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'preservim/nerdtree'
@@ -31,5 +31,10 @@ return require('packer').startup(function(use)
   }
   use 'wakatime/vim-wakatime'
   use 'tpope/vim-fugitive'
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+  }
 end)
 

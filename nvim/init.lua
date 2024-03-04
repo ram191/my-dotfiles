@@ -4,6 +4,8 @@ require("core/theme")
 require("core/lsp")
 require("core/cmp")
 require("core/treesitter")
+require("core/telescope")
+require("core/harpoon")
 
 -- Vim options
 -- vim.opt.background = "dark"
