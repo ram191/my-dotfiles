@@ -23,6 +23,7 @@ lspconfig.intelephense.setup{
 }
 lspconfig.jedi_language_server.setup{}
 lspconfig.vimls.setup{}
+lspconfig.templ.setup{}
 lspconfig.lua_ls.setup{
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -55,6 +56,9 @@ lspconfig.lua_ls.setup{
   }
 }
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

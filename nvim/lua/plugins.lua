@@ -1,7 +1,6 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- Only required if you have packer configured as `opt` vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -22,7 +21,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'ribru17/bamboo.nvim'
   use 'prettier/vim-prettier'
   use {
@@ -36,5 +34,25 @@ return require('packer').startup(function(use)
     branch = "harpoon2",
     requires = { {"nvim-lua/plenary.nvim"} }
   }
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
+  use({
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!:).
+    run = "make install_jsregexp"
+  })
+  use "rafamadriz/friendly-snippets"
 end)
 
