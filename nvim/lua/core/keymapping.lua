@@ -7,5 +7,5 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map('n', '<c-p>', '<cmd>Telescope find_files<cr>')
-map('i', '{', '{}<Esc>i')
-map('i', '<leader>l', 'logger.DefaultLogger.Sugar().Error(err)')
+map('n', '<leader>', '<cmd>lua vim.diagnostic.open_float()<CR>')
+map('n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<CR>') 

@@ -1,11 +1,10 @@
-require("luasnip.loaders.from_vscode").lazy_load()
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts_ls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -15,6 +14,9 @@ end
 
 -- luasnip setup
 local luasnip = require 'luasnip'
+luasnip.filetype_extend('templ', { 'html', 'css', 'javascript', 'bs5', 'mason' })
+luasnip.filetype_extend('html', { 'html', 'css', 'javascript', 'bs5', 'mason' })
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'

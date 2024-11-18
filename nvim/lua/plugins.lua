@@ -34,25 +34,18 @@ return require('packer').startup(function(use)
     branch = "harpoon2",
     requires = { {"nvim-lua/plenary.nvim"} }
   }
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  })
+  use "ram191/friendly-snippets"
   use({
     "L3MON4D3/LuaSnip",
     -- follow latest release.
     tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!:).
-    run = "make install_jsregexp"
+    run = "make install_jsregexp",
+    dependencies = { "ram191/friendly-snippets" }
   })
-  use "rafamadriz/friendly-snippets"
+  use "folke/trouble.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "https://github.com/tpope/vim-surround"
+  use "mattn/emmet-vim"
 end)
 

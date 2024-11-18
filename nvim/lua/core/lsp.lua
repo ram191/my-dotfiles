@@ -1,6 +1,6 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup{}
 lspconfig.gopls.setup{}
 lspconfig.golangci_lint_ls.setup{}
 lspconfig.bashls.setup{}
@@ -54,6 +54,12 @@ lspconfig.lua_ls.setup{
   settings = {
     Lua = {}
   }
+}
+lspconfig.solidity.setup{
+  cmd = {'nomicfoundation-solidity-language-server', '--stdio'},
+  filetypes = { 'solidity' },
+  root_dir = lspconfig.util.find_git_ancestor,
+  single_file_support = true,
 }
 
 --Enable (broadcasting) snippet capability for completion
