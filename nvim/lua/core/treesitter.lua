@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript" },
+  -- A list of parser names, or "all" (the five listed  should always be installed)
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "embedded_template" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -22,7 +22,6 @@ require'nvim-treesitter.configs'.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    disable = { "c", "rust" },
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
     disable = function(lang, buf)
         local max_filesize = 100 * 1024 -- 100 KB
@@ -38,4 +37,36 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  -- Add the parser for embedded_template
+  parsers = {
+    embedded_template = {
+      install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-embedded-template",
+        files = {"src/parser.c"},
+        -- Add any other necessary configurations
+      },
+    },
+  },
 }
+
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+
+parser_config.blade = {
+  install_info = {
+    url = "https://github.com/EmranMR/tree-sitter-blade",
+    files = {"src/parser.c"},
+    branch = "main",
+  },
+  filetype = "blade"
+}
+
+parser_config.gotmpl = {
+  install_info = {
+    url = "https://github.com/ngalaiko/tree-sitter-go-template",
+    files = {"src/parser.c"}
+  },
+  filetype = "gotmpl",
+  used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl", "yaml"}
+}
+
