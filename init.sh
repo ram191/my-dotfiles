@@ -33,6 +33,7 @@ install_packer() {
 # Install essential libraries
 install_essentials() {
   sudo apt-get install git lsof wget jq zsh -y
+  sudo apt-get install build-essential
 
   echo 'export SHELL=/bin/zsh
   exec /bin/zsh -l' > ~/.bash_profile
