@@ -1,6 +1,11 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.ts_ls.setup{}
+
+lspconfig.ts_ls.setup{
+  on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern("package.json"),
+  single_file_support = false
+}
 lspconfig.gopls.setup{}
 lspconfig.golangci_lint_ls.setup{}
 lspconfig.bashls.setup{}
@@ -24,6 +29,10 @@ lspconfig.intelephense.setup{
 lspconfig.jedi_language_server.setup{}
 lspconfig.vimls.setup{}
 lspconfig.templ.setup{}
+lspconfig.denols.setup{
+  on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+}
 lspconfig.lua_ls.setup{
   on_init = function(client)
     local path = client.workspace_folders[1].name

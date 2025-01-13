@@ -47,5 +47,6 @@ return require('packer').startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim"
   use "https://github.com/tpope/vim-surround"
   use "mattn/emmet-vim"
+  use "lewis6991/gitsigns.nvim"
 end)
 
