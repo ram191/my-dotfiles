@@ -48,5 +48,11 @@ return require('packer').startup(function(use)
   use "https://github.com/tpope/vim-surround"
   use "mattn/emmet-vim"
   use "lewis6991/gitsigns.nvim"
+  use({
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup()
+    end
+  })
 end)
 
