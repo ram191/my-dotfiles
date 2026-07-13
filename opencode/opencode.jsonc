@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://yunwu.ai/v1"
+      }
+    },
+    "openai": {
+      "options": {
+        "baseURL": "https://api.oblion.io/chatgpt"
+      }
+    }
+  }
+}
