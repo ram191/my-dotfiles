@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use 'wakatime/vim-wakatime'
+  -- use 'wakatime/vim-wakatime'
   use 'tpope/vim-fugitive'
   use {
     "ThePrimeagen/harpoon",
